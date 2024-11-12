@@ -5,6 +5,12 @@ import {
 } from "@worldcoin/idkit";
 import "@suiet/wallet-kit/style.css";
 import { Link } from "react-router-dom";
+import {
+  MetaMaskButton,
+  useAccount,
+  useSDK,
+  useSignMessage,
+} from "@metamask/sdk-react-ui";
 
 import worldid from "../assets/worldId-removebg-preview.png";
 import logo from "../assets/logo-removebg-preview.png";
@@ -12,6 +18,7 @@ import logo from "../assets/logo-removebg-preview.png";
 import { useEffect, useState } from "react";
 import { usePrincipalId } from "../Context/UserContext";
 import toast from "react-hot-toast";
+import { Header } from "antd/es/layout/layout";
 
 // Extend the Window interface to include the ic property
 declare global {
@@ -31,7 +38,18 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { principalId, setPrincipalId } = usePrincipalId();
 
+  const { isConnected } = useAccount();
   const [loading, setLoading] = useState(false); // State to hold the principal ID
+
+  const {
+    data: signData,
+    isError: isSignError,
+    isLoading: isSignLoading,
+    isSuccess: isSignSuccess,
+    signMessage,
+  } = useSignMessage({
+    message: "gm wagmi frens",
+  });
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -49,7 +67,7 @@ const Navbar = () => {
       body: JSON.stringify(proof),
     });
     if (!res.ok) {
-      throw new Error("Verification failed."); // IDKit will display the error message to the user in the modal
+      throw new Error("Verification failed.");
     }
   };
 
@@ -61,35 +79,6 @@ const Navbar = () => {
     window.location.href = "/dashboard";
   };
 
-  const handleConnect = async (whitelist: string[]) => {
-    try {
-      // Check if the Plug wallet is available
-      setLoading(true);
-      if (typeof window.ic?.plug === "undefined") {
-        toast("Plug wallet is not installed!");
-        return;
-      }
-
-      const response = await window.ic.plug.requestConnect({
-        whitelist,
-      });
-      if (response) {
-        const principal = await window.ic.plug.agent.getPrincipal();
-        setPrincipalId(principal.toText());
-        setIsLoggedIn(true);
-        localStorage.setItem("principalId", principal.toText());
-        setLoading(false); // Save the principal ID to state
-        console.log(
-          "Connected to wallet with principal ID:",
-          principal.toText()
-        );
-
-        (document.getElementById("my_modal_3") as HTMLDialogElement)?.close();
-      }
-    } catch (error) {
-      console.error("Error during wallet connection:", error);
-    }
-  };
   useEffect(() => {
     // Fetch the principal ID from local storage
     const storedPrincipalId = localStorage.getItem("principalId");
@@ -169,79 +158,48 @@ const Navbar = () => {
                 </li>
               </ul>
 
-              <button
-                className=" bg-none rounded-full px-9 border border-neutral py-2"
-                onClick={() =>
-                  (
-                    document.getElementById("my_modal_3") as HTMLDialogElement
-                  )?.showModal()
-                }
-              >
-                {" "}
-                {isLoggedIn
-                  ? `${principalId?.substring(0, 4)}...${principalId?.substring(
-                      principalId?.length - 4
-                    )}`
-                  : "Connect Wallet"}
-              </button>
-
-              <dialog id="my_modal_3" className="modal">
-                <div className="modal-box">
-                  <form method="dialog">
-                    {/* if there is a button in form, it will close the modal */}
-                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                      ✕
-                    </button>
-                  </form>
-                  <h3 className="font-semibold p-4 text-xl">Connect Wallet!</h3>
-                  <div className="flex-col items-center p-8">
-                    <div className="flex items-center justify-evenly ">
-                      <IDKitWidget
-                        app_id="app_06dfaf6fb5f0b8ac58c10bf412238ffb" // obtained from the Developer Portal
-                        action="wallet-connect" // obtained from the Developer Portal
-                        onSuccess={onSuccess} // callback when the modal is closed
-                        handleVerify={handleVerify} // callback when the proof is received
-                        verification_level={VerificationLevel.Device}
+              <div className="flex-col items-center p-8">
+                <div className="flex items-center justify-evenly ">
+                  <IDKitWidget
+                    app_id="app_06dfaf6fb5f0b8ac58c10bf412238ffb" // obtained from the Developer Portal
+                    action="wallet-connect" // obtained from the Developer Portal
+                    onSuccess={onSuccess} // callback when the modal is closed
+                    handleVerify={handleVerify} // callback when the proof is received
+                    verification_level={VerificationLevel.Device}
+                  >
+                    {({ open }) => (
+                      // This is the button that will open the IDKit modal
+                      <button
+                        onClick={open}
+                        className="w-max mr-3 bg-white border-[3px] border-black rounded-xl flex justify-between items-center gap-4 px-1"
                       >
-                        {({ open }) => (
-                          // This is the button that will open the IDKit modal
-                          <button
-                            onClick={open}
-                            className="w-max mr-3 bg-white border-[3px] border-black rounded-xl flex justify-between items-center gap-4 px-1"
-                          >
-                            <img
-                              src={worldid}
-                              alt=""
-                              className=""
-                              height={35}
-                              width={35}
-                            />{" "}
-                            <p className="text font-semibold text-black">
-                              World ID
-                            </p>
-                          </button>
-                        )}
-                      </IDKitWidget>
+                        <img
+                          src={worldid}
+                          alt=""
+                          className=""
+                          height={35}
+                          width={35}
+                        />{" "}
+                        <p className="text font-semibold text-black">
+                          World ID
+                        </p>
+                      </button>
+                    )}
+                  </IDKitWidget>
 
-                      {}
-                      {/* thk54-haaaa-aaaag-alfra-cai */}
-                      <div className={loading ? `disabled` : ""}>
-                        {/* <PlugConnect
-                          whitelist={["thk54-haaaa-aaaag-alfra-cai"]}
-                          onConnectCallback={() => {
-                            handleConnect(["thk54-haaaa-aaaag-alfra-cai"]);
-                          }}
-                          title="Connect"
-                          debug={true}
-                        /> */}
-                      </div>
-                    </div>
-                    <div className="w-[70%] flex justify-center items-center m-auto mt-5">
-                      {/* <Login onLogin={handleLogin} /> */}
-                    </div>
+                  {}
+                  {/* thk54-haaaa-aaaag-alfra-cai */}
+                  <div className={loading ? `disabled` : ""}>
+                    <MetaMaskButton
+                      theme={"light"}
+                      color="white"
+                    ></MetaMaskButton>
                   </div>
                 </div>
-              </dialog>
+                <div className="w-[70%] flex justify-center items-center m-auto mt-5">
+                  {/* <Login onLogin={handleLogin} /> */}
+                </div>
+              </div>
 
               {/* Display the principal ID
               {principalId && (

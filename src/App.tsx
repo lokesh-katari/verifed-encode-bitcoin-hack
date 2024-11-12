@@ -8,6 +8,7 @@ import QuizbyId from "./pages/QuizbyId";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
+
 function App() {
   return (
     <>
