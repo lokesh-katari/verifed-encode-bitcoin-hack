@@ -51,7 +51,7 @@
 // export default QuizDetails;
 import React from "react";
 import { Link } from "react-router-dom";
-import icpimg from "../assets/icp.jpg";
+import icpimg from "../assets/zk_ai.png";
 interface QuizParamType {
   quizid: string | undefined;
 }
@@ -67,8 +67,8 @@ interface QuizInfo {
 const QuizDetails: React.FC<QuizParamType> = ({ quizid }) => {
   // In a real application, you would fetch this data based on the quizid
   const quizInfo: QuizInfo = {
-    title: "Fundamentals of ICP",
-    description: "you will learn the basics of ICP and how to use it.",
+    title: "Questions in Zk and AI",
+    description: "you will learn the basics of AI and ZK and how to use it.",
     duration: 20, // in minutes
     questionCount: 20,
     imageUrl: icpimg, // replace with actual image URL

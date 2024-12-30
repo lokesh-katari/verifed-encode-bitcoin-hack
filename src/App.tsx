@@ -19,6 +19,7 @@ function App() {
 
           <Route path="/quiz/:id/start" element={<Quiz />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/services" element={<Dashboard />} />
           <Route path="/" element={<Home />} />
           <Route path="/quiz/:id" element={<QuizbyId />} />
           <Route path="*" element={<NotFound />} />

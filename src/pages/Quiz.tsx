@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Confetti from "react-confetti";
 import toast, { Toaster } from "react-hot-toast";
 import data from "../move_que.json";
-import icp from "../icp.json";
+import icp from "../zk_ai.json";
 import { useParams } from "react-router-dom";
 import VideoCapture from "../components/Proctoring/VideoCapture";
 

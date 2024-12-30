@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import icpImg from "../assets/icp.jpg";
 import motoko from "../assets/motoko.jpeg";
+import zk from "../assets/zk_ai.png";
 const CategoryCard = () => {
   return (
     <div className="card w-auto bg-base-100 shadow-xl">
@@ -12,7 +13,7 @@ const CategoryCard = () => {
             <div className="flex relative w-full h-full ">
               <img
                 className="w-full rounded-xl"
-                src={icpImg}
+                src={zk}
                 alt={"dummy"}
                 loading="lazy"
                 height={230}
