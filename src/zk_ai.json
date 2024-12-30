@@ -1,0 +1,243 @@
+[
+    {
+      "questionNumber": 1,
+      "question": "What does ZKP stand for in cryptography?",
+      "options": [
+        "Zero-Knowledge Proof",
+        "Zero-Knowledge Protocol",
+        "Zero-Key Protocol",
+        "Zero-Key Proof"
+      ],
+      "correctAnswer": "Zero-Knowledge Proof",
+      "difficulty": "Easy"
+    },
+    {
+      "questionNumber": 2,
+      "question": "Which is a common application of ZKP in blockchain?",
+      "options": [
+        "Transaction privacy",
+        "Token generation",
+        "Consensus mechanism",
+        "Smart contract execution"
+      ],
+      "correctAnswer": "Transaction privacy",
+      "difficulty": "Easy"
+    },
+    {
+      "questionNumber": 3,
+      "question": "What is the purpose of zk-SNARKs?",
+      "options": [
+        "Provide encrypted communications",
+        "Validate transactions without revealing details",
+        "Decentralize network nodes",
+        "Improve smart contract performance"
+      ],
+      "correctAnswer": "Validate transactions without revealing details",
+      "difficulty": "Medium"
+    },
+    {
+      "questionNumber": 4,
+      "question": "Which blockchain platform prominently uses zk-SNARKs?",
+      "options": [
+        "Ethereum",
+        "Zcash",
+        "Bitcoin",
+        "Polkadot"
+      ],
+      "correctAnswer": "Zcash",
+      "difficulty": "Medium"
+    },
+    {
+      "questionNumber": 5,
+      "question": "What does zk-STARK stand for?",
+      "options": [
+        "Zero-Knowledge Scalable Transparent Argument of Knowledge",
+        "Zero-Knowledge Simple Transparent Agreement of Knowledge",
+        "Zero-Knowledge Scalable Token Argument of Knowledge",
+        "Zero-Knowledge Secure Transparent Argument of Knowledge"
+      ],
+      "correctAnswer": "Zero-Knowledge Scalable Transparent Argument of Knowledge",
+      "difficulty": "Hard"
+    },
+    {
+      "questionNumber": 6,
+      "question": "What is a major advantage of zk-STARKs over zk-SNARKs?",
+      "options": [
+        "Smaller proof size",
+        "No trusted setup required",
+        "Faster proof verification",
+        "Lower computational cost"
+      ],
+      "correctAnswer": "No trusted setup required",
+      "difficulty": "Hard"
+    },
+    {
+      "questionNumber": 7,
+      "question": "In AI, what does GPT stand for?",
+      "options": [
+        "Generalized Processing Transformer",
+        "Generative Pre-trained Transformer",
+        "Graphical Prediction Tool",
+        "Gradient Propagation Technology"
+      ],
+      "correctAnswer": "Generative Pre-trained Transformer",
+      "difficulty": "Easy"
+    },
+    {
+      "questionNumber": 8,
+      "question": "What is the purpose of fine-tuning in AI models?",
+      "options": [
+        "To pre-train the model on a large dataset",
+        "To adapt a pre-trained model to a specific task",
+        "To improve model compression",
+        "To increase the size of the training dataset"
+      ],
+      "correctAnswer": "To adapt a pre-trained model to a specific task",
+      "difficulty": "Medium"
+    },
+    {
+      "questionNumber": 9,
+      "question": "Which algorithm is commonly used for training deep learning models?",
+      "options": [
+        "K-Nearest Neighbors",
+        "Gradient Descent",
+        "Decision Trees",
+        "Random Forest"
+      ],
+      "correctAnswer": "Gradient Descent",
+      "difficulty": "Easy"
+    },
+    {
+      "questionNumber": 10,
+      "question": "What is the primary purpose of ZKP in AI?",
+      "options": [
+        "Improving model performance",
+        "Ensuring data privacy in AI inference",
+        "Increasing model training speed",
+        "Enhancing explainability of AI models"
+      ],
+      "correctAnswer": "Ensuring data privacy in AI inference",
+      "difficulty": "Medium"
+    },
+    {
+      "questionNumber": 11,
+      "question": "Which ZK technique is commonly used in federated learning?",
+      "options": [
+        "zk-SNARKs",
+        "zk-STARKs",
+        "Homomorphic encryption",
+        "Commitment schemes"
+      ],
+      "correctAnswer": "Homomorphic encryption",
+      "difficulty": "Hard"
+    },
+    {
+      "questionNumber": 12,
+      "question": "What is the purpose of a trusted setup in zk-SNARKs?",
+      "options": [
+        "To ensure faster proof generation",
+        "To initialize cryptographic parameters",
+        "To increase proof transparency",
+        "To eliminate verification delays"
+      ],
+      "correctAnswer": "To initialize cryptographic parameters",
+      "difficulty": "Medium"
+    },
+    {
+      "questionNumber": 13,
+      "question": "What type of neural network is typically used for sequence-to-sequence tasks?",
+      "options": [
+        "Convolutional Neural Networks (CNNs)",
+        "Recurrent Neural Networks (RNNs)",
+        "Generative Adversarial Networks (GANs)",
+        "Support Vector Machines (SVMs)"
+      ],
+      "correctAnswer": "Recurrent Neural Networks (RNNs)",
+      "difficulty": "Medium"
+    },
+    {
+      "questionNumber": 14,
+      "question": "How does Zero-Knowledge Proof enhance privacy in machine learning?",
+      "options": [
+        "By obscuring the training dataset",
+        "By verifying computations without revealing input data",
+        "By using encrypted weights in models",
+        "By anonymizing user identities"
+      ],
+      "correctAnswer": "By verifying computations without revealing input data",
+      "difficulty": "Medium"
+    },
+    {
+      "questionNumber": 15,
+      "question": "Which field combines ZKP with AI to ensure private AI model training?",
+      "options": [
+        "Federated learning",
+        "Explainable AI",
+        "Reinforcement learning",
+        "Self-supervised learning"
+      ],
+      "correctAnswer": "Federated learning",
+      "difficulty": "Hard"
+    },
+    {
+      "questionNumber": 16,
+      "question": "What is the main advantage of using zk-SNARKs in decentralized AI marketplaces?",
+      "options": [
+        "Lower costs",
+        "Proof of trust without exposing data",
+        "Faster model training",
+        "Enhanced model explainability"
+      ],
+      "correctAnswer": "Proof of trust without exposing data",
+      "difficulty": "Hard"
+    },
+    {
+      "questionNumber": 17,
+      "question": "Which AI model architecture is most suitable for NLP tasks?",
+      "options": [
+        "Transformer",
+        "Convolutional Neural Networks",
+        "Recurrent Neural Networks",
+        "Support Vector Machines"
+      ],
+      "correctAnswer": "Transformer",
+      "difficulty": "Medium"
+    },
+    {
+      "questionNumber": 18,
+      "question": "What is the primary cryptographic technique behind zk-SNARKs?",
+      "options": [
+        "Elliptic Curve Cryptography",
+        "Bilinear Pairings",
+        "Hash Functions",
+        "Digital Signatures"
+      ],
+      "correctAnswer": "Bilinear Pairings",
+      "difficulty": "Hard"
+    },
+    {
+      "questionNumber": 19,
+      "question": "What is a zero-knowledge AI system?",
+      "options": [
+        "An AI system trained on no data",
+        "An AI system that ensures privacy of inputs during inference",
+        "An AI system that uses minimal computational resources",
+        "An AI system that relies solely on supervised learning"
+      ],
+      "correctAnswer": "An AI system that ensures privacy of inputs during inference",
+      "difficulty": "Medium"
+    },
+    {
+      "questionNumber": 20,
+      "question": "What is a potential risk of using ZKP in AI?",
+      "options": [
+        "Increased computational complexity",
+        "Loss of model accuracy",
+        "Reduced data security",
+        "Decreased training speed"
+      ],
+      "correctAnswer": "Increased computational complexity",
+      "difficulty": "Hard"
+    }
+  ]
+  
